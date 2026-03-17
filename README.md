@@ -3,7 +3,7 @@
 ### ⚡ Custom Embedded Electronics for an Autonomous Sumo Robot
 
 <p align="center">
-  <img src="docs/Sumo.gif" width="500"/>
+  <img src="Sumo.gif" width="500"/>
 </p>
 
 <p align="center">

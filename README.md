@@ -1,16 +1,11 @@
-# 🤖 HAKUHO Hardware
-<p align="center">
-  <img src="https://img.shields.io/badge/status-in%20development-orange"/>
-  <img src="https://img.shields.io/badge/MCU-STM32-blue"/>
-  <img src="https://img.shields.io/badge/design-PCB-green"/>
-  <img src="https://img.shields.io/badge/power-LiPo-red"/>
-  <img src="https://img.shields.io/badge/version-Rev%20A-lightgrey"/>
-</p>
-### ⚡ Custom Embedded Electronics for an Autonomous Sumo Robot
-
 <p align="center">
   <img src="Sumo.gif" width="500"/>
 </p>
+
+
+# 🤖 HAKUHO Hardware
+
+### ⚡ Custom Embedded Electronics for an Autonomous Sumo Robot
 
 ---
 

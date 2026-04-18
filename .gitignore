@@ -1,0 +1,9 @@
+# Altium Designer auto files
+History/
+__Previews/
+*.PrjPcbStructure
+*.bak
+*.log
+
+# Windows system files
+desktop.ini

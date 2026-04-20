@@ -90,7 +90,7 @@ HAKUHO/
 * [x] System architecture defined
 * [x] Component selection
 * [x] Power regulation design
-* [ ] Final schematic validation
+* [x] Final schematic validation
 * [ ] PCB routing
 * [ ] Prototype fabrication
 * [ ] Hardware testing

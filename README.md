@@ -2,141 +2,128 @@
   <img src="Sumo.gif" width="500"/>
 </p>
 
+# HAKUHO Hardware
 
-# 🤖 HAKUHO Hardware
+### Custom Embedded Electronics for an Autonomous Sumo Robot
 
-### ⚡ Custom Embedded Electronics for an Autonomous Sumo Robot
+HAKUHO is a custom embedded hardware platform designed for an autonomous sumo robot.
 
----
-
-## 📌 Overview
-
-This repository contains the **hardware design** of the HAKUHO sumo robot.
-It includes schematic design, PCB layout, power architecture, and integration of sensors and motor control systems.
-
-The goal is to build a **compact, reliable, and high-performance embedded platform** for autonomous robotics competitions.
+The board brings together processing, motor control, distance sensing, line detection, power management and external interfaces on a single PCB intended for compact robotic integration.
 
 ---
 
-## 🚀 Key Features
+## Hardware Architecture
 
-* 🧠 STM32-based control system (Blue Pill compatible)
-* 🔋 Li-Po battery powered architecture
-* ⚡ 3.3V regulated logic rail (AMS1117-based)
-* 🔁 Reverse polarity protection (MOSFET-based)
-* 🛞 Dual motor driver (tank drive)
-* 📡 VL53L0X distance sensors (I2C)
-* ⚫ Line sensors for ring detection
-* 📺 IR receiver interface
-* 🧩 Custom PCB design
+```mermaid
+flowchart LR
+
+    BAT["Li-Po Battery"]
+    PWR["Power & Protection"]
+    MCU["STM32F103"]
+    MOTOR["Dual Motor Drivers"]
+    DIST["VL53L0X Sensors"]
+    LINE["Line Sensors"]
+    IR["IR Receiver"]
+    MOTORS["Left / Right Motors"]
+
+    BAT --> PWR
+    PWR --> MCU
+    PWR --> MOTOR
+
+    DIST --> MCU
+    LINE --> MCU
+    IR --> MCU
+
+    MCU --> MOTOR
+    MOTOR --> MOTORS
+```
 
 ---
 
-## 🧠 System Architecture
+## Main Hardware
+
+| Block | Implementation |
+|---|---|
+| MCU | STM32F103C8T6 |
+| Motor Control | TB6612FNG dual motor drivers |
+| Distance Sensing | VL53L0X ToF sensors |
+| Line Detection | External line sensors |
+| IR Interface | IR receiver |
+| Logic Rail | 3.3 V |
+| Power Source | Li-Po battery |
+| Protection | MOSFET reverse-polarity protection |
+
+---
+
+## PCB Design
+
+The PCB integrates the robot's main electronic functions into a compact control platform.
 
 <p align="center">
-  <img src="docs/system_block_diagram.png" width="600"/>
+  <img src="docs/pcb_preview.png" width="650"/>
 </p>
 
-### Main Blocks:
+The design includes:
 
-* **Power Stage**
-
-  * Battery input (Li-Po)
-  * Protection (MOSFET)
-  * Voltage regulation (5V → 3.3V)
-
-* **Processing**
-
-  * STM32 microcontroller
-
-* **Sensing**
-
-  * VL53L0X (I2C bus)
-  * Line detection sensors
-  * IR receiver
-
-* **Actuation**
-
-  * Dual motor drivers (left/right)
+- STM32 processing core
+- motor-driver stages
+- multi-sensor interfaces
+- I²C distribution for VL53L0X sensors
+- line-sensor inputs
+- IR receiver interface
+- regulated power rails
+- reverse-polarity protection
+- programming / debug access
+- robot interconnects
 
 ---
 
-## 📂 Repository Structure
+## Repository Contents
 
-```bash
+```text
 HAKUHO/
-├── docs/              # diagrams, images, GIFs
-├── schematics/        # .SchDoc files
-├── pcb/               # PCB layout files
-├── libraries/         # custom components (symbols + footprints)
-├── production/        # Gerbers, BOM
+│
+├── docs/
+│   ├── system_block_diagram.png
+│   ├── pcb_preview.png
+│   └── Sumo.gif
+│
+├── schematics/
+│   └── Altium schematic files
+│
+├── pcb/
+│   └── PCB layout files
+│
+├── libraries/
+│   └── Custom symbols and footprints
+│
+├── production/
+│   ├── Gerbers
+│   └── BOM
+│
 └── README.md
 ```
 
 ---
 
-## 🛠️ Design Tools
+## Design Tools
 
-* 🧰 Altium Designer
-* 🔧 SnapEDA (components)
-* 💻 Git & GitHub
-* ⚙️ STM32 ecosystem
-
----
-
-## 📊 Current Status
-
-* [x] System architecture defined
-* [x] Component selection
-* [x] Power regulation design
-* [x] Final schematic validation
-* [ ] PCB routing
-* [ ] Prototype fabrication
-* [ ] Hardware testing
+- Altium Designer
+- SnapEDA
+- STM32 ecosystem
+- Git / GitHub
 
 ---
 
-## 🧪 Hardware Specs
+## Project Focus
 
-| Feature       | Value                       |
-| ------------- | --------------------------- |
-| MCU           | STM32F103C8T6               |
-| Logic Voltage | 3.3V                        |
-| Power Source  | Li-Po battery               |
-| Motor Driver  | TB6612FNG                   |
-| Sensors       | VL53L0X + IR + Line sensors |
+HAKUHO was designed around one main idea:
+
+> Build a compact robot-control platform where sensing, processing, power and motor control are integrated into one coherent embedded system.
 
 ---
 
-## 🔮 Roadmap
+## Author
 
-* Improve power integrity
-* Optimize PCB routing (return paths, EMI)
-* Validate I2C multi-device architecture
-* Build and test prototype
-* Iterate to Rev B
-
----
-
-## 📸 Preview
-
-<p align="center">
-  <img src="docs/pcb_preview.png" width="500"/>
-</p>
-
----
-
-## 📜 License
-
-This project is currently under development.
-License will be defined after first stable release.
-
----
-
-## 👤 Author
-
-**Mohamed Reda EZ-ZOUHRY**
-Embedded Systems & Control Engineering Student
-
----
+**Mohamed Reda EZ-ZOUHRY**  
+Embedded Systems & Control Engineering

@@ -1,9 +1,33 @@
-# Altium Designer auto files
+# =========================================================
+# Altium Designer
+# =========================================================
+
+# History / previews
 History/
 __Previews/
-*.PrjPcbStructure
-*.bak
-*.log
 
-# Windows system files
+# Generated project folders
+Project Logs*/
+Project Outputs*/
+Generated/
+Generated Documents/
+
+# Temporary / generated files
+*.PrjPcbStructure
+*.SchDocPreview
+*.PcbDocPreview
+*.bak
+*.tmp
+*.log
+*.LOG
+
+# Lock / temporary files
+~$*
+.~*
+
+# =========================================================
+# Windows
+# =========================================================
+
 desktop.ini
+Thumbs.db
